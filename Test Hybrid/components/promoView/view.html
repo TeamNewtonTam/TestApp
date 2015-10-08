@@ -1,0 +1,27 @@
+<div data-role="view" data-title="Promo" data-layout="main" data-model="app.promoView" data-show="app.promoView.onShow" data-after-show="app.promoView.afterShow">
+    <div id="promoViewModel" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li>
+                    <label>Description
+                        <input data-bind="value: promoViewModel.fields.promoDesc" type="text">
+                    </label>
+                </li>
+                <li>
+                    <label>CustLookup
+                        <input data-bind="value: promoViewModel.fields.search" placeholder="Customer" type="search">
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group">
+                <a data-role="button" data-bind="events: { click: promoViewModel.cancel }">Cancel</a>
+                <a class="primary" data-role="button" data-bind="events: { click: promoViewModel.submit }">Confirm</a>
+            </div>
+        </form>
+        <!-- START_CUSTOM_CODE_promoViewModel -->
+        <!-- END_CUSTOM_CODE_promoViewModel -->
+    </div>
+    <!-- START_CUSTOM_CODE_promoView -->
+    <!-- END_CUSTOM_CODE_promoView -->
+</div>

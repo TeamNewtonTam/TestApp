@@ -1,15 +1,109 @@
 {
   "type": "kendo-ui-mobile",
-  "isNew": true,
+  "views": [
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "splash",
+      "components": [],
+      "title": "Splash",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "aboutView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:about",
+          "name": "aboutViewModel",
+          "appName": "My App",
+          "appVersion": "Version 1",
+          "appDescription": "App description",
+          "contactButton": true,
+          "contactLabel": "Contact us",
+          "contactMail": "support@example.com",
+          "facebookButton": true,
+          "facebookLabel": "Like us on Facebook",
+          "facebookLink": "https://www.facebook.com/Telerik",
+          "twitterButton": true,
+          "twitterLabel": "Follow us on Twitter",
+          "twitterLink": "https://twitter.com/telerik"
+        }
+      ],
+      "title": "About",
+      "addToNavigation": true,
+      "icon": "info"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "homeView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:authentication",
+          "name": "homeViewModel",
+          "dataProvider": "defaultProvider",
+          "emailLabel": "Email",
+          "passwordLabel": "Password",
+          "signinLabel": "Sign In",
+          "signinRedirect": "homeView",
+          "enableRegistration": true,
+          "gotoRegisterLabel": "Register",
+          "registerEmailLabel": "Email",
+          "registerPasswordLabel": "Password",
+          "registerNameLabel": "Name",
+          "registerLabel": "Register",
+          "registerRedirect": "homeView",
+          "gotoSigninLabel": "Sign In"
+        }
+      ],
+      "title": "Login",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "promoView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "promoDesc",
+              "title": "Description",
+              "inputType": "text"
+            },
+            {
+              "type": "kendo-ui-mobile:field",
+              "name": "search",
+              "title": "CustLookup",
+              "inputType": "search",
+              "placeholder": "Customer"
+            }
+          ],
+          "name": "promoViewModel",
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "title": "Promo",
+      "addToNavigation": true,
+      "icon": "bookmarks"
+    }
+  ],
   "dataProviders": [
     {
-      "type": "dataProvider",
-      "title": "DefaultProvider",
+      "type": "kendo-ui-mobile:dataProvider",
       "name": "defaultProvider",
+      "everliveUrl": "//platform.telerik.com/bs-api/v1/",
+      "title": "DefaultProvider",
       "source": "everlive",
-      "offlineStorage": true,
       "everliveKey": "Zrb8KUbwMQmChCMB",
-      "everliveUrl": ""
+      "offlineStorage": true
     }
-  ]
+  ],
+  "name": "kendoUiMobileApp",
+  "navigation": "tabstrip",
+  "view": "homeView",
+  "transition": "slide",
+  "skin": "flat"
 }
